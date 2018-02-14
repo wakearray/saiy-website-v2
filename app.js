@@ -25,17 +25,22 @@ app.use((req, res, next) => {
   next();
 });
 
-app.use((req, res, next) => {
-  res.render('template.hbs',{
-    mainContent: `<center>
-          <p><img class="main_img" src="images/saiy.svg"></p>
-          <p class="main_text">Saiy.ai is currently undergoing maintenence. We'll be back soon! In the mean time feel free to find us on the Play Store and GitHub at the links below.</p>
-          <p>
-            <a href="https://play.google.com/store/apps/details?id=ai.saiy.android" target="_blank" class="button">Play Store</a> 
-            <a href="https://github.com/brandall76/Saiy-PS" target="_blank" class="button">GitHub</a>
-          </p>`
-  });
-});
+// --------------------------------------------------------------------------------------------------
+// Uncomment below for server maintenence. As privacy policy and terms of use pages 
+// are static html hosted by command above, they will be the only pages uneffected by this redirect.
+// --------------------------------------------------------------------------------------------------
+//
+// app.use((req, res, next) => {
+//   res.render('template.hbs',{
+//     mainContent: `<center>
+//           <p><img class="main_img" src="images/saiy.svg"></p>
+//           <p class="main_text">Saiy.ai is currently undergoing maintenence. We'll be back soon! In the mean time feel free to find us on the Play Store and GitHub at the links below.</p>
+//           <p>
+//             <a href="https://play.google.com/store/apps/details?id=ai.saiy.android" target="_blank" class="button">Play Store</a> 
+//             <a href="https://github.com/brandall76/Saiy-PS" target="_blank" class="button">GitHub</a>
+//           </p>`
+//   });
+// });
 
 app.get('/', (req, res) => {
   res.render('template.hbs',{
